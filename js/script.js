@@ -1,4 +1,5 @@
 var studentsAvg = [];
+var SUBJECTS_NUM = 4;
 
 document.getElementById('readFile').addEventListener('click', () => {
     Papa.parse(document.getElementById('uploadFileInput').files[0],
@@ -11,7 +12,7 @@ document.getElementById('readFile').addEventListener('click', () => {
                 
                 //Set students average
                 let avg = Math.round(((parseInt(results.data[i].Algebra) + parseInt(results.data[i].Calculus)
-                + parseInt(results.data[i].Databases) + parseInt(results.data[i].Programming))/4)*10)/10;
+                + parseInt(results.data[i].Databases) + parseInt(results.data[i].Programming))/SUBJECTS_NUM)*10)/10;
 
                 // Get grade
                 let grade;
